@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="events.dev">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>events.dev - {{ title }}</title>
+    <meta name="description" content="{{ summary | truncate: 200 }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ summary | truncate: 200 }}">
+    <meta name="twitter:image" content="https://v1.screenshot.11ty.dev/https://events.dev{{ page.url }}/opengraph">
+    <meta property="og:url" content="https://events.dev{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ summary | truncate: 200 }}">
+    <meta property="og:image" content="https://v1.screenshot.11ty.dev/https://events.dev{{ page.url }}/opengraph">
+
+    <link rel="icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="webmention" href="https://webmention.io/events.dev/webmention" />
+    <link rel="pingback" href="https://webmention.io/events.dev/xmlrpc" />
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "6824ef5e57654f9993b49f3aae485a98"}'></script>
+
+    <script defer type="application/ld+json">
+        {
+            "@context": "http:\\schema.org",
+            "@type": "NewsArticle",
+            "image": [],
+            "url": "https://events.dev{{ page.url }}",
+            "dateCreated": "{{ page.date | formatDate: "ISOString" }}",
+            "datePublished": "{{ page.date | formatDate: "ISOString" }}",
+            "dateModified": "{{ page.date | formatDate: "ISOString" }}",
+            "headline": "{{ title }}",
+            "name": "{{ title }}",
+            "description": "{{ summary | truncate: 200 }}",
+            "author": {
+                "@type": "Person",
+                "name": "{{ author.name }}",
+                "url": "{{ author.url }}"
+            },
+            "creator": [
+                "{{ author.name }}"
+            ],
+            "mainEntityOfPage": "https://events.dev{{ page.url }}",
+            "keywords": {{ topics | keywordTags | safe }}
+        }
+    </script>
+
+    <link rel="stylesheet" href="/styles/global.css" type="text/css">
+    <link rel="stylesheet" href="/styles/blog.css" type="text/css">
+    <link rel="stylesheet" href="/styles/code.css" type="text/css">
+</head>
+
+<body>
+    <header id="header">
+        <h2><a href="/">events.dev</a></h2>
+        <nav>
+            <h3><a href="/blogs.html">All Blogs</a></h3>
+            <h3><a href="/projects.html">Projects</a></h3>
+        </nav>
+    </header>
+    <main>
+        <article class="blog h-entry">
+            <h1 class="header p-name">{{ title }}</h1>
+            <div class="details p-description">
+                <a class="author u-author h-card" href="{{ author.url }}" target="_blank" rel="noopener noreferrer">
+                    <img class="u-photo" loading="lazy" decoding="async" src="{{ author.image }}" alt="{{ author.name }}">
+                    <span class="p-name">{{ author.name }}</span>
+                </a>
+                <div class="timings">
+                    <time class="date dt-published" datetime="{{ page.date | formatDate: "ISOString" }}">{{ page.date | formatDate: "LocaleDateString" }}</time>
+                    <time class="read" datetime="PT{{ content | readTime }}M">Read in {{ content | readTime }} minutes</time>
+                </div>
+            </div>
+            <div class="e-content">
+                {{ content | safe }}
+            </div>
+        </article>
+        <form action="https://webmention.io/events.dev/webmention" method="post" class="webmention">
+            <label>Mention this post from your site:
+                <input type="url" name="source" placeholder="https://example.com" required="">
+            </label>
+            <input type="hidden" name="target" value="https://events.dev{{ page.url }}">
+            <button type="submit">Send Webmention</button>
+            <small>These are <a href="https://indieweb.org/Webmention" rel="noopener noreferrer">webmentions</a> powered
+                by <a href="https://webmention.io/" rel="noopener noreferrer">webmention.io</a></small>
+        </form>
+    </main>
+    <footer>
+        <p>🌊 Bye!!</p>
+        <div class="flex">
+            <a href="#header">Back To Top</a>
+        </div>
+        <div class="flex">
+            <a href="https://github.com/jordanfinners/events.dev/blob/main/{{ page.inputPath }}">Edit this page on GitHub</a>
+        </div>
+        <p>This work is licensed under a <a rel="license"
+                href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-Non Commercial 4.0
+                International License</a>.</p>
+        <p>Copyright 2021</p>
+    </footer>
+</body>
+
+</html>

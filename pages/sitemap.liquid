@@ -1,0 +1,62 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <url>
+        <loc>https://events.dev</loc>
+        <lastmod>{{ collections.blogs | maxDate: "Date" }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://events.dev/blogs.html</loc>
+        <lastmod>{{ collections.blogs | maxDate: "Date" }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://events.dev/projects.html</loc>
+        <lastmod>{{ collections.blogs | maxDate: "Date" }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://webhooks.events.dev</loc>
+        <lastmod>{{ collections.blogs | maxDate: "Date" }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    {% for page in collections.projects %}
+        <url>
+            <loc>https://events.dev{{ page.url }}</loc>
+            <lastmod>{{ page.date | formatDate: "Date" }}</lastmod>
+            <changefreq>{{ "monthly" }}</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>{{ page.data.url }}</loc>
+            <lastmod>{{ page.date | formatDate: "Date" }}</lastmod>
+            <changefreq>{{ "monthly" }}</changefreq>
+            <priority>0.8</priority>
+        </url>
+    {% endfor %}
+
+    {% for page in collections.blogs %}
+        <url>
+            <loc>https://events.dev{{ page.url }}</loc>
+            <lastmod>{{ page.date | formatDate: "Date" }}</lastmod>
+            <changefreq>{{ "monthly" }}</changefreq>
+            <priority>0.8</priority>
+        </url>
+    {% endfor %}
+
+</urlset>

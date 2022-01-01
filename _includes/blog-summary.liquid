@@ -1,0 +1,10 @@
+<div class="blog">
+    <h3><a href="{{ blog.url }}">{{ blog.data.title }}</a></h3> by <a class="author"
+        href="{{ blog.data.author.url }}" target="_blank" rel="noopener noreferrer">{{ blog.data.author.name }}</a>
+    <div class="timings">
+        <time class="date" datetime="{{ blog.date | formatDate: "ISOString" }}">{{ blog.date | formatDate: "LocaleDateString" }}</time>
+        <time class="read" datetime="PT{{ blog.templateContent | readTime }}M">Read in {{ blog.templateContent |
+            readTime }} minutes</time>
+    </div>
+    <p>{{ blog.data.summary | truncate: 200 | safe }}</p>
+</div>

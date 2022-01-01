@@ -1,0 +1,209 @@
+@font-face {
+  font-family: Inter;
+  src: url("./Inter.ttf") format("woff2 supports variations"), url("./Inter.ttf") format("woff2-variations");
+  font-weight: 100 400 900;
+  font-display: swap;
+}
+
+html,
+:host > * {
+  --black: #141414;
+  --yellow: #ffc837;
+  --orange: #ff8008;
+  --grey: #b7b7b7;
+  --light-grey: #e1e1e1;
+  --white: #fff;
+  --gradient: linear-gradient(155deg, var(--yellow) 0%, var(--orange) 100%);
+}
+
+[hidden] {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 25px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  background-color: var(--black);
+  color: var(--grey);
+}
+
+main {
+  min-height: 75vh;
+  max-width: 700px;
+  margin: auto;
+}
+
+a,
+a:visited {
+  color: var(--light-grey);
+  text-decoration: none;
+  background-image:
+    var(--gradient),
+    linear-gradient(
+      transparent 1px,
+      transparent 1px
+    );
+  background-size: 0% 2px, 100% 2px;
+  background-position: 0 bottom, 0 bottom;
+  transition: background-size 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  background-size: 100% 2px;
+}
+
+@supports (-ms-ime-align:auto) {
+  a,
+  a:visited {
+    background-image:
+      var(--gradient),
+      linear-gradient(transparent, transparent);
+    background-size: 0% 2px, 100% 2px;
+    padding-bottom: 1px;
+  }
+
+  a:hover {
+    background-size: 100% 2px;
+  }
+}
+
+span.material-icons {
+  font-size: 25px;
+}
+
+.text-gradient {
+  background: linear-gradient(155deg, var(--yellow) 0%, var(--orange) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ul {
+  padding: 0;
+}
+
+ul > li {
+  list-style: none;
+}
+
+footer {
+  margin: 75px 0 0;
+  font-size: 10px;
+}
+
+button,
+a.contribute {
+  background: var(--gradient);
+  color: var(--black);
+  border-radius: 32px;
+  padding: 10px 15px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+button.secondary {
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  background: none;
+}
+
+button.tertiary {
+  border: none;
+  color: var(--yellow);
+  text-decoration: underline;
+  background: none;
+}
+
+button.secondary[type="reset"] {
+  margin-left: 10px;
+}
+
+button[disabled],
+input[disabled] {
+  opacity: 0.5;
+}
+
+details {
+  user-select: none;
+  padding: 25px;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--light-grey);
+}
+
+pre {
+  background: var(--light-grey);
+  color: var(--black);
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+input {
+  border: 2px solid var(--grey);
+  border-radius: 3px;
+  background: var(--white);
+  padding: 10px;
+}
+
+form > label > input {
+  width: 250px;
+}
+
+form > small {
+  display: block;
+}
+
+input::placeholder {
+  color: var(--grey);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--yellow);
+  transition: border-color ease 300ms;
+}
+
+header {
+  display: flex;
+}
+
+header > h2 {
+  font-size: 18px;
+}
+
+header > nav {
+  display: flex;
+  margin: auto 0 auto auto;
+}
+
+header > nav > h3 {
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--grey);
+  margin-right: 25px;
+}
+
+div.flex {
+  display: flex;
+}
+
+@media (max-width: 769px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header > nav {
+    margin: auto;
+  }
+}

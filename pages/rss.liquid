@@ -1,0 +1,27 @@
+---
+permalink: /rss.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>events.dev</title>
+    <link>https://events.dev</link>
+    <atom:link href="https://events.dev/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Highly scalable, developer-first platform for sending reliable, repeatable webhooks. Add secure, scalable, standards based webhooks to your business in as few as four API calls.</description>
+    <language>en-gb</language>
+    <ttl>1440</ttl>
+    <lastBuildDate>{{ collections.blogs | maxDate: "UTCString" }}</lastBuildDate>
+
+    {% for blog in collections.blogs %}
+    <item>
+      <title>{{ blog.data.title }}</title>
+      <link>{{ blog.url }}</link>
+      <guid>{{ blog.url }}</guid>
+      <description>{{ blog.data.summary }}</description>
+      <pubDate>{{ blog.date  | formatDate: "UTCString" }}</pubDate>
+    </item>
+    {% endfor %}
+
+ </channel>
+</rss>

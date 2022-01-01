@@ -1,0 +1,7 @@
+<div class="project">
+    <a href="{{ project.data.url }}">
+        <img loading="lazy" decoding="async" src="{{ project.data.image }}" alt="{{ project.data.title }}">
+    </a>
+    <h3><a href="{{ project.data.url }}">{{ project.data.title }}</a></h3>
+    {{ project.templateContent | safe }}
+</div>

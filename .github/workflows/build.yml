@@ -1,0 +1,19 @@
+name: build
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Node JS Setup
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+
+    - name: Install
+      run: npm install
+
+    - name: Lint
+      run: npm run lint

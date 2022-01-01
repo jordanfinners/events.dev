@@ -1,0 +1,45 @@
+---
+permalink: index.html
+layout: main.liquid
+---
+<section class="hero">
+    <div class="text">
+        <h1>Your Hub for <br> Event Driven Architecture</h1>
+        <p>Event Driven Architecture is a HUGE topic<br> we wanted to create an open hub for that information.</p>
+        <p>With blogs, how to guides, real world example and projects to help make working with Event Driven Systems easier.</p>
+        <a href="https://github.com/jordanfinners/events.dev" class="contribute">You can contribute too!</a>
+    </div>
+</section>
+<section class="blogs">
+    <h2><a href="/blogs.html">Blogs</a></h2>
+    {% for blog in collections.blogs limit:5 %}
+        {% include blog-summary.liquid %}
+    {% endfor %}
+    <a href="/blogs.html">View More Blogs...</a>
+</section>
+<section class="project">
+    <h2><a href="/projects.html">Projects</a></h2>
+    <p>We want to help make adopting and using event driven architecture easier and less complicated. We are actively building tools to help!</p>
+</section>
+<section class="projects">
+    {% for project in collections.projects %}
+        {% include project-summary.liquid %}
+    {% endfor %}
+</section>
+<section class="faqs">
+    <h2>FAQs</h2>
+    <p>Got a question or want to talk about Event Driven Systems?<br> We'd love to chat, <a href="mailto:jordan@finners.dev">email us</a>.</p>
+    <div class="questions">
+        <details>
+            <summary>How can I contribute?</summary>
+            <p>This site is open source and we would love to hear your experiences and get different perspectives and opinions on Event Driven Systems.</p>
+            <p>You can <a href="https://github.com/jordanfinners/events.dev">view the website code and contribute on our Github repository</a> or via the link at the bottom of each page.</p>
+        </details>
+        <details>
+            <summary>What are events.dev projects?</summary>
+            <p class="answer">
+
+            </p>
+        </details>
+    </div>
+</section>

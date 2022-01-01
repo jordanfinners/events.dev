@@ -1,0 +1,66 @@
+main > section {
+  margin: 0 0 75px;
+}
+
+main > section.hero {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0;
+}
+
+main > section.hero > div.text {
+  padding: 0 50px;
+  text-align: center;
+}
+
+main > section.hero > div.text > h1 {
+  font-size: 3em;
+}
+
+main > section.hero > div.text > a {
+  display: inline-block;
+}
+
+main > section.blogs > div.blog {
+  margin: 30px auto;
+}
+
+main > section.blogs > div.blog > h3,
+main > section.blogs > div.blog > a.author {
+  display: inline-block;
+}
+
+main > section.blogs > div.blog > div.timings {
+  font-size: 14px;
+}
+
+main > section.blogs > div.blog > div.timings > time.read {
+  margin-left: 15px;
+}
+
+main > section.project {
+  margin: 0;
+}
+
+main > section.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  gap: 100px 25px;
+}
+
+main > section.projects > div.project {
+  display: flex;
+  flex-direction: column;
+}
+
+main > section.projects > div.project > a {
+  display: contents;
+}
+
+main > section.projects > div.project > a > img {
+  border: 1px solid var(--yellow);
+}
+
+main > section.projects > div.project > p {
+  margin: 0;
+}

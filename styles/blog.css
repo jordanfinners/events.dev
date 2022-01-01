@@ -1,0 +1,30 @@
+main > article.blog > div.details {
+  margin: 25px auto;
+}
+
+main > article.blog > div.details > a.author {
+  display: inline-flex;
+  margin: 10px auto;
+}
+
+main > article.blog > div.details > a.author > img {
+  border-radius: 50%;
+  height: 50px;
+  margin: auto 0;
+}
+
+main > article.blog > div.details > a.author > span {
+  margin: auto 0 auto 10px;
+}
+
+main > article.blog > div.details > div.timings > time.read {
+  margin-left: 25px;
+}
+
+main > article.blog > div.e-content > div.table-of-contents > ol {
+  padding: 0;
+}
+
+main > form.webmention {
+  margin: 50px auto;
+}

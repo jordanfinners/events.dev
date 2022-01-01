@@ -1,0 +1,11 @@
+---
+permalink: projects.html
+layout: main.liquid
+---
+<h1>Projects</h1>
+<p>We want to help make adopting and using event driven architecture easier and less complicated. We are actively building tools to help!</p>
+<section class="projects">
+    {% for project in collections.projects %}
+        {% include project-summary.liquid %}
+    {% endfor %}
+</section>

@@ -1,0 +1,4 @@
+.eslint*
+.stylelint*
+.github
+README.md

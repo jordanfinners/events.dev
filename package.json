@@ -1,0 +1,50 @@
+{
+  "name": "events.dev",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
+    "eslint": "^8.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-html": "^6.1.1",
+    "markdown-it": "^12.3.0",
+    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-emoji": "^2.0.0",
+    "markdown-it-modify-token": "^1.0.2",
+    "markdown-it-table-of-contents": "^0.6.0",
+    "remark-cli": "^10.0.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-preset-lint-recommended": "^6.1.2",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "lint": "npm run lint:md && npm run lint:css && npm run lint:js",
+    "lint:fix": "npm run lint:md:fix && npm run lint:css:fix && npm run lint:js:fix",
+    "lint:md": "remark . --quiet",
+    "lint:md:fix": "remark . --output --quiet",
+    "lint:css": "stylelint '**/*.css' '!**/_site/**'",
+    "lint:css:fix": "stylelint '**/*.css' '!**/_site/**' --fix",
+    "lint:js": "eslint --ext js,html",
+    "lint:js:fix": "eslint --ext js,html --fix "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanfinners/events.dev.git"
+  },
+  "author": "@jordanfinners",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanfinners/events.dev/issues"
+  },
+  "homepage": "https://github.com/jordanfinners/events.dev#readme",
+  "remarkConfig": {
+    "plugins": [
+      "remark-frontmatter",
+      "remark-preset-lint-recommended"
+    ]
+  }
+}
