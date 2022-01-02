@@ -64,3 +64,13 @@ main > section.projects > div.project > a > img {
 main > section.projects > div.project > p {
   margin: 0;
 }
+
+@media (max-width: 769px) {
+  main > section.hero > div.text {
+    padding: 0;
+  }
+
+  main > section.projects {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
