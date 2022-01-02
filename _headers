@@ -1,6 +1,6 @@
 /*
   Server: https://events.dev
-  Cache-Control: public, s-maxage=86400
+  Cache-Control: private, max-age=1800
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
